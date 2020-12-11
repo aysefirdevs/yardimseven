@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% block body %}
+    {% load crispy_forms_tags %}
+    <div class="container-fluid">
+          <div class="row">
+            <div class="col-4" ></div>
+            <div class="col-4 ">
+            <h3>OGRETMEN KAYIT OL</h3>
+                            <hr>
+                            <form method="POST">
+                                {% csrf_token %}
+                                {{ form|crispy }}
+                                <br>
+                                <button type="submit" class="btn btn-danger">Kayıt Ol</button>
+                            </form>
+
+            </div>
+            <div class="col-4"></div>
+          </div>
+    </div>
+
+
+{% endblock %}

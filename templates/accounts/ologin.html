@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block body %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+        {% load crispy_forms_tags %}
+         <div class="container-fluid">
+          <div class="row">
+            <div class="col-4" ></div>
+            <div class="col-4 ">
+                            <h3>OGRETMEN GİRİŞ YAP</h3>
+                            <hr>
+                            <form method="post" class="uniForm">
+                                {% csrf_token %}
+                                {{ form|crispy }}
+                                <br>
+                                <button type="submit" class="btn btn-danger">Giriş Yap</button>
+                                <a class="float-right" href="{% url 'ogretmen_signup' %}">Hesabınız Yok mu?</a>
+
+                            </form>
+        </div>
+    </div>
+
+{% endblock body%}

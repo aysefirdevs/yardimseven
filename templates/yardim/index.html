@@ -1,0 +1,296 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="container">
+<!-- slide barr--->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide One - Set the background image for this slide in the line below -->
+      <div class="carousel-item active" style="background-image: url({% static 'img/slider/manzara1.jpg' %});">
+        <div class="carousel-caption d-none d-md-block">
+          <h3 class="display-4">First Slide</h3>
+          <p class="lead">Sosyal yardım etkinlikleri içeriği burada yer alacaktır.</p>
+        </div>
+      </div>
+      <!-- Slide Two - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image:url({% static 'img/slider/manzara2.jpg' %});">
+        <div class="carousel-caption d-none d-md-block">
+          <h3 class="display-4">Second Slide</h3>
+          <p class="lead">Sosyal yardım etkinlikleri içeriği burada yer alacaktır.</p>
+        </div>
+      </div>
+      <!-- Slide Three - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url({% static 'img/slider/manzara3.jpg' %});">
+        <div class="carousel-caption d-none d-md-block">
+          <h3 class="display-4">Third Slide</h3>
+          <p class="lead">Sosyal yardım etkinlikleri içeriği burada yer alacaktır.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+
+
+  </div>
+    <!-- slide bar-->
+    <!--================Blog Area =================-->
+<section class="blog_area p_120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="blog_left_sidebar">
+                            <article class="blog_style1">
+                            	<div class="blog_img">
+                            		<img class="img-fluid" src="{% static 'img/home/manzara4.jpg' %}" alt="">
+                            	</div>
+                            	<div class="blog_text">
+									<div class="blog_text_inner">
+										<a class="cat" href="#">Gadgets</a>
+										<a href="single-blog.html" style="text-decoration: none"><h4>Köy Okulları Bağış Gereksinimi Başlığı</h4></a>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+										<div class="date">
+											<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 20 Kasım 2020</a>
+											<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+										</div>
+									</div>
+                            	</div>
+                            </article>
+                            <article class="blog_style1">
+                            	<div class="blog_img">
+                            		<img class="img-fluid" src="{% static 'img/home/manzara5.jpg' %}" alt="">
+                            	</div>
+                            	<div class="blog_text">
+									<div class="blog_text_inner">
+										<a class="cat" href="#">Gadgets</a>
+										<a href="single-blog.html" style="text-decoration: none"><h4>Köy Okulları Bağış Gereksinimi Başlığı</h4></a>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+										<div class="date">
+											<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 20 Kasım 2020</a>
+											<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+										</div>
+									</div>
+								</div>
+                            </article>
+                            <div class="row">
+                            	<div class="col-md-6">
+                            		<article class="blog_style1 small">
+										<div class="blog_img">
+											<img class="img-fluid" src="{% static 'img/home/manzara6.jpg' %}" alt="">
+										</div>
+										<div class="blog_text">
+											<div class="blog_text_inner">
+												<a class="cat" href="#">Gadgets</a>
+												<a href="single-blog.html" style="text-decoration: none"><h4>Köy Okulları Bağış Gereksinimi Başlığı</h4></a>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+												<div class="date">
+													<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 20 Kasım 2020</a>
+													<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+												</div>
+											</div>
+										</div>
+									</article>
+                            	</div>
+                            	<div class="col-md-6">
+                            		<article class="blog_style1 small">
+										<div class="blog_img">
+											<img class="img-fluid" src="{% static 'img/home/manzara7.jpg' %}" alt="">
+										</div>
+										<div class="blog_text">
+											<div class="blog_text_inner">
+												<a class="cat" href="#">Gadgets</a>
+												<a href="single-blog.html" style="text-decoration: none"><h4>Köy Okulları Bağış Gereksinimi Başlığı</h4></a>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+												<div class="date">
+													<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 20 Kasım 2020</a>
+													<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+												</div>
+											</div>
+										</div>
+									</article>
+                            	</div>
+                            </div>
+                            <article class="blog_style1">
+                            	<div class="blog_img">
+                            		<img class="img-fluid" src="{% static 'img/home/manzara8.jpg' %}" alt="">
+                            	</div>
+                            	<div class="blog_text">
+									<div class="blog_text_inner">
+										<a class="cat" href="#">Gadgets</a>
+										<a href="single-blog.html" style="text-decoration: none" ><h4>Köy Okulları Bağış Gereksinimi Başlığı</h4></a>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+										<div class="date">
+											<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 20 Kasım 2020</a>
+											<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+										</div>
+									</div>
+                            	</div>
+                            </article>
+                            <article class="blog_style1">
+                            	<div class="blog_img">
+                            		<img class="img-fluid" src="{% static 'img/home/manzara9.jpg' %}" alt="">
+                            	</div>
+                            	<div class="blog_text">
+									<div class="blog_text_inner">
+										<a class="cat" href="#">Gadgets</a>
+										<a href="single-blog.html" style="text-decoration: none"><h4>Köy Okulları Bağış Gereksinimi Başlığı</h4></a>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+										<div class="date">
+											<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 20 Kasım 2020</a>
+											<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+										</div>
+									</div>
+								</div>
+                            </article>
+                            <nav class="blog-pagination justify-content-center d-flex">
+		                        <ul class="pagination">
+		                            <li class="page-item">
+		                                <a href="#" class="page-link" aria-label="Previous">
+		                                    <span aria-hidden="true">
+		                                        <span class="lnr lnr-chevron-left"></span>
+		                                    </span>
+		                                </a>
+		                            </li>
+		                            <li class="page-item"><a href="#" class="page-link">01</a></li>
+		                            <li class="page-item active"><a href="#" class="page-link">02</a></li>
+		                            <li class="page-item"><a href="#" class="page-link">03</a></li>
+		                            <li class="page-item"><a href="#" class="page-link">04</a></li>
+		                            <li class="page-item"><a href="#" class="page-link">09</a></li>
+		                            <li class="page-item">
+		                                <a href="#" class="page-link" aria-label="Next">
+		                                    <span aria-hidden="true">
+		                                        <span class="lnr lnr-chevron-right"></span>
+		                                    </span>
+		                                </a>
+		                            </li>
+		                        </ul>
+		                    </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog_right_sidebar">
+                            <aside class="single_sidebar_widget search_widget">
+                                <div class="input-group">
+                                    <!--input type="text" class="form-control" placeholder="Search Posts"-->
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
+                                    </span>
+                                </div><!-- /input-group -->
+                                <div class="br"></div>
+                            </aside>
+                            <aside class="single_sidebar_widget author_widget">
+                                <img class="author_img rounded-circle" src="{% static 'img/home/user.png' %}" alt="">
+                                <h4>Ayşe Firdevs Çelik</h4>
+                                <p>Sosyal medya hesapları</p>
+                                <div class="social_icon">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-github"></i></a>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                                <div class="br"></div>
+                            </aside>
+                            <aside class="single_sidebar_widget popular_post_widget">
+                                <h3 class="widget_title">Populer Yardımlar</h3>
+                                <div class="media post_item">
+                                    <!--img src="{% static 'img/blog/popular-post/post1.jpg' %}" alt="post"-->
+                                    <div class="media-body">
+                                        <a href="#"><h3>Yardım Başlığı</h3></a>
+                                        <p>02 Saat Önce</p>
+                                    </div>
+                                </div>
+                                <div class="media post_item">
+                                    <!--img src="{% static 'img/blog/popular-post/post2.jpg' %}" alt="post"-->
+                                    <div class="media-body">
+                                        <a href="#"><h3>Yardım Başlığı</h3></a>
+                                        <p>02 Saat Önce</p>
+                                    </div>
+                                </div>
+                                <div class="media post_item">
+                                    <!--img src="{% static 'img/blog/popular-post/post3.jpg' %}" alt="post"-->
+                                    <div class="media-body">
+                                        <a href="#"><h3>Yardım Başlığı</h3></a>
+                                        <p>03 Saat Önce</p>
+                                    </div>
+                                </div>
+                                <div class="media post_item">
+                                    <!--img src="{% static '' %}" alt="post"-->
+                                    <div class="media-body">
+                                        <a href="#"><h3>Yardım Başlığı</h3></a>
+                                        <p>01 Saat Önce</p>
+                                    </div>
+                                </div>
+                                <div class="br"></div>
+                            </aside>
+                            <aside class="single_sidebar_widget">
+                                <a href="#"><img class="img-fluid" src="{% static 'img/blog/add.jpg' %}" alt=""></a>
+                                <div class="br"></div>
+                            </aside>
+                            <aside class="single_sidebar_widget post_category_widget">
+                                <h4 class="widget_title">Yardım Kategorileri</h4>
+                                <ul class="list cat-list">
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between">
+                                            <p>Öğrenci</p>
+                                            <p>37</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between">
+                                            <p>Köy Okulları</p>
+                                            <p>24</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between">
+                                            <p>Gıda/Giyim/Ev Eşyası</p>
+                                            <p>59</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between">
+                                            <p>Afetzedeler</p>
+                                            <p>29</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between">
+                                            <p>İhtiyaç Sahipleri</p>
+                                            <p>15</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between">
+                                            <p>Sokak Hayvanları</p>
+                                            <p>09</p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================Blog Area =================-->
+
+</div>
+
+
+
+
+{% endblock %}

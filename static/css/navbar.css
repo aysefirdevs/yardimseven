@@ -1,0 +1,298 @@
+html {
+  height:100%;
+
+}
+
+nav {
+  max-width: 100%;
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+nav ul {
+  text-align: left;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  padding: 20px;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color: rgba(0, 0, 0, 1);
+  font-size: 15px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+nav ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0.2, 0.3), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(0, 35, 122, 0.7);
+
+}
+nav ul li:hover> ul,
+ul li ul:hover{
+
+  visibility: visible;
+  display: block;
+}
+
+nav ul li:hover> ul,
+ul li ul:hover{
+  visibility: visible;
+  display: block;
+}
+
+ul li ul li {
+
+	clear: both;
+    width: 100%;
+}
+ul li ul li a{
+  text-decoration: none;
+}
+
+
+/* <- Magic Stuff Start */
+
+.btn:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0.2, 0.3), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(0, 35, 122, 0.7);
+  background-position: right center; /* change the direction of the change here */
+}
+.btn-1 {
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+}
+
+.btn-2 {
+  background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+}
+
+
+.btn{
+  padding: 18px;
+  font-size: 15px;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color: rgba(0, 0, 0, 1);
+  text-decoration: none;
+  display: block;
+
+}
+.buton{
+
+}
+
+/* Magic Stuff End -> */
+
+
+
+/* footer css */
+/*
+Responsive Footer - Contact bar with animated icons
+Code: Marco Natolli
+Hire me: marconatolli@gmail.com
+Note: remove .centroassoluto before adding to your page
+*/
+
+
+p {font-family: 'Montserrat', sans-serif;
+  font-size: 12px; }
+
+
+
+@media only screen and (min-width: 768px) {
+	.ftC {
+		float: left;
+		display: flex;
+		flex-direction: COLUMN;
+		justify-content: space-around;
+		margin: 40px;
+		text-align: center;
+		vertical-align: middle;
+		width: 100%;
+		height: 50%;
+		min-height: 20%;
+		mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+		}
+}
+
+@media only screen and (max-width: 768px) {
+	.ftC {
+        display: flex;
+		flex-direction: COLUMN;
+		justify-content: space-around;
+		margin: 0;
+		text-align: center;
+		width: 100%;
+		height: 100vh;
+		min-height: 100vh;
+        mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+		}
+}
+
+  .ftC a {color: #000000; text-decoration: none; font-weight:bold;}
+
+@media only screen and (min-width: 768px) { .sparisci {display: block;} }
+@media only screen and (max-width: 768px) { .sparisci {display: none;} }
+@media only screen and (min-width: 768px) { .sparisci2 {display: none;} }
+@media only screen and (max-width: 768px) { .sparisci2 {display: block;} }
+
+
+
+
+.ftC p {margin: 0px; color: #000000;}
+
+.ftcontatti {display:flex; justify-content: center;}
+
+@media only screen and (max-width: 550px) {
+	.colonnacontatti { width: 100%; padding-left: 10px;
+                                   padding-right: 10px;
+                                     padding-top: 10px;
+                                   padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+  }
+ @media only screen and (min-width: 550px) {
+	.colonnacontatti { width: 30%;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+   }
+  }
+
+@media only screen and (max-width: 550px) {
+	.orizcontatti {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+  }}
+
+@media only screen and (min-width: 550px) {
+	.orizcontatti {
+  display: flex;
+
+  justify-content: space-around;
+
+}}
+
+
+.stroke-solid {
+  stroke-dashoffset: 0;
+  stroke-dashArray: 300;
+  stroke-width: 2px;
+  transition: stroke-dashoffset 0.8s ease,  opacity 0.5s ease;
+}
+
+.stroke-under {
+  stroke-dashoffset: 00;
+  stroke-dashArray: 300;
+  stroke-width: 1px;
+}
+
+.st0 {  fill: #000000;
+   display:inline-block;
+    border:0;
+    position: absolute;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+	transform-origin: 50% 50%;
+    transform: scale(1);
+}
+
+
+#play:hover .stroke-solid {
+  opacity: 1;
+  stroke-dashoffset: 300;
+}
+
+#play:hover .st0 {
+fill: #000000;
+    -webkit-transition: all 100ms ease-in;
+    -webkit-transform: scale(1.05);
+    -ms-transition: all 100ms ease-in;
+    -ms-transform: scale(1.05);
+    -moz-transition: all 100ms ease-in;
+    -moz-transform: scale(1.05);
+    transition: all 100ms ease-in;
+    transform-origin: 50% 50%;
+    transform: scale(1.05);
+}
+
+#play {
+  cursor: pointer;
+}
+
+
+.orizcont {
+    margin-top: 102px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+.vl {
+    border-left: 1px solid #000000;
+}
+.ol {
+    border-top: 5px solid #000000;
+    width: 100%;
+}
+
+.fill-height-or-more {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.fill-height-or-more > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+	.ol {display: none;}
+}
+
+@media only screen and (max-width: 768px) {
+	.vl {display: none;}
+	.orizcont {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			}
+
+.fill-height-or-more > div {
+display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+}
+.fill-height-or-more {
+display: flex; padding: 20px;
+			flex-direction: column;
+			justify-content: space-around;
+}
+
+}
+.some-area {  padding-left: 10px;
+    padding-right: 10px;}
