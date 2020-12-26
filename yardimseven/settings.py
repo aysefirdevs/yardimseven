@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL='accounts.User'
 # Application definition
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'crispy_forms',
     'django_cleanup.apps.CleanupConfig',
+
 
 
 ]
@@ -63,12 +65,14 @@ TEMPLATES = [
         'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
+
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+
 
             ],
         },
@@ -89,7 +93,10 @@ DATABASES = {
         'PASSWORD': '1234',
         'HOST': '127.0.0.1',
         'PORT': '3306',
-    }
+        'OPTIONS':{
+        "init_command":"SET foreign_key_checks = 0;",
+        },
+    },
 }
 
 # Password validation

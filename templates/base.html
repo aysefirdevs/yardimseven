@@ -32,11 +32,24 @@
     </li>
     <li><a href="{% url 'hakkimizda' %}" style="text-decoration: none" >Hakkımızda</a>
     </li>
-    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-decoration: none">Projeler</a>
+    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-decoration: none" >Projeler <b class="caret"></b></a>
         <ul class="dropdown-menu animated">
-            <li><a href="#" style="text-decoration: none">Öğrenci</a></li>
-            <li><a href="#" style="text-decoration: none">Köy Okulları</a></li>
-            <li><a href="#" style="text-decoration: none">Gıda/Giyim/Ev Eşyası</a></li>
+            <li class="dropdown-submenu"><a href="#" style="text-decoration: none">Öğrenci</a>
+                <ul class="dropdown-menu">
+                <li><a href="#">Kırtasiye</a></li>
+                    <li><a href="#">Teknoloji</a></li>
+                    <li><a href="#">Giyim</a></li>
+                </ul>
+            </li>
+
+            <li><a href="{% url 'koyokullari' %}" style="text-decoration: none">Köy Okulları</a></li>
+            <li class="dropdown-submenu"><a href="#" style="text-decoration: none">Gıda/Giyim/Ev Eşyası</a>
+                <ul class="dropdown-menu">
+                <li><a href="#">Gıda</a></li>
+                    <li><a href="#">Giyim</a></li>
+                    <li><a href="#">Ev Eşyası</a></li>
+                </ul>
+            </li>
         </ul>
     </li>
       <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-decoration: none">Bağış Yap</a>
@@ -54,10 +67,10 @@
                 <li><a></a></li><li><a></a><li><a></a></li>
 
       {% if request.user.is_authenticated and user.is_ogretmen %}
-          <li class="buton"><a href="#" class="btn btn-1">İhtiyaç Ekle</a></li>
+          <li class="buton"><a href="{% url 'ihtiyacekle' %}" class="btn btn-1">İhtiyaç Ekle</a></li>
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-decoration: none">HESABIM</a>
           <ul class="dropdown-menu animated">
-              <li><a href="#" style="text-decoration: none">İhtİyaçlarım</a></li>
+              <li><a href="{% url 'ihtiyaclarim' %}" style="text-decoration: none">İhtiyaçlarım</a></li>
 
                <li><a href="accounts/logout" style="text-decoration: none">Çıkış Yap</a></li>
           </ul></li>
@@ -82,11 +95,11 @@
 
 </nav>
 
-     {% if request.user.is_authenticated  %}
+ <!--    {% if request.user.is_authenticated  %}
         Hoşgeldiniz,{{ request.user.username }}
     {% else %}
 
-    {% endif %}
+    {% endif %}  -->
 
 
 
