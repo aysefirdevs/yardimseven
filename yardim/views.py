@@ -1,7 +1,6 @@
 from msilib.schema import ListView
 
 from django.urls import reverse
-
 from .forms import IhtiyacForm
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
@@ -10,6 +9,7 @@ from django.contrib import messages
 from django.views.generic import TemplateView, ListView, DetailView
 
 from .models import Ihtiyac, Carousel
+
 STATUS = "published"
 
 class IndexView(ListView):
@@ -19,7 +19,6 @@ class IndexView(ListView):
     context_object_name = 'ihtiyaclar'
     paginate_by = 2
 
-
     def get_context_data(self, *, object_list=None, **kwargs):
         context=super(IndexView, self).get_context_data(**kwargs)
         context['images'] = Carousel.objects.filter(
@@ -28,13 +27,13 @@ class IndexView(ListView):
         return context
 
 
-"""def carousel(request):
-    context = dict()
-    context['images'] = Carousel.objects.filter(
-        status="published",
-    ).exclude(cover_image='')
 
-    return render(request, 'yardim/index.html', context)"""
+#def carousel(request):
+ #   context = dict()
+ #   context['images'] = Carousel.objects.filter(
+  #      status="published",
+ #   ).exclude(cover_image='')
+ #   return render(request, 'yardim/index.html', context)"""
 
 
 class detay(DetailView):
@@ -50,9 +49,7 @@ class detay(DetailView):
         return context
 
 
-"""def detay(request,id):
-    ihtiyaclar=Ihtiyac.objects.filter(id=id).first()
-    return render(request,'yardim/detay.html',{'ihtiyaclar':ihtiyaclar})"""
+
 
 
 def hakkimizda(request):
@@ -117,5 +114,4 @@ def deleteIhtiyac(request,id):
 def koyokullari(request):
     ihtiyaclar = Ihtiyac.objects.all()
     return render(request, 'yardim/koyokullari.html', {'ihtiyaclar': ihtiyaclar})
-
 

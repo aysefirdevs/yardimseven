@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
+    {% load mptt_tags %}
 <div class="container">
 <!-- slide barr--->
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
@@ -8,6 +9,7 @@
 {% include 'yardim/carousel.html' %}
     <!-- slide bar-->
     <!--================Blog Area =================-->
+
 <section class="blog_area p_120">
             <div class="container">
                 <div class="row">

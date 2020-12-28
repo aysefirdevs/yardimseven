@@ -1,5 +1,6 @@
 <!doctype html>
 {% load static %}
+{% load mptt_tags %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,22 +33,25 @@
     </li>
     <li><a href="{% url 'hakkimizda' %}" style="text-decoration: none" >Hakkımızda</a>
     </li>
+
     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-decoration: none" >Projeler <b class="caret"></b></a>
         <ul class="dropdown-menu animated">
-            <li class="dropdown-submenu"><a href="#" style="text-decoration: none">Öğrenci</a>
+
+            <li class="dropdown-submenu"><a href="{% url 'ogrenci' %}" style="text-decoration: none">Öğrenci</a>
+
                 <ul class="dropdown-menu">
-                <li><a href="#">Kırtasiye</a></li>
-                    <li><a href="#">Teknoloji</a></li>
-                    <li><a href="#">Giyim</a></li>
+                <li><a href="{% url 'kirtasiye' %}">Kırtasiye</a></li>
+                    <li><a href="{% url 'elektronik' %}">Elektronik</a></li>
+                    <li><a href="{% url 'cgiyim' %}"> Çocuk Giyim</a></li>
                 </ul>
             </li>
 
             <li><a href="{% url 'koyokullari' %}" style="text-decoration: none">Köy Okulları</a></li>
-            <li class="dropdown-submenu"><a href="#" style="text-decoration: none">Gıda/Giyim/Ev Eşyası</a>
+            <li class="dropdown-submenu"><a href="{% url 'yardim' %}" style="text-decoration: none">Gıda/Giyim/Ev Eşyası</a>
                 <ul class="dropdown-menu">
-                <li><a href="#">Gıda</a></li>
-                    <li><a href="#">Giyim</a></li>
-                    <li><a href="#">Ev Eşyası</a></li>
+                <li><a href="{% url 'gida' %}">Gıda</a></li>
+                    <li><a href="{% url 'giyim' %}">Giyim</a></li>
+                    <li><a href="{% url 'esya' %}">Ev Eşyası</a></li>
                 </ul>
             </li>
         </ul>
@@ -60,7 +64,6 @@
                 </ul>
       </li>
       <li><a href="{% url 'bizeulasin' %}" style="text-decoration: none">Bize Ulaşın</a></li>
-
 
                      <li><a></a></li><li><a></a></li><li><a></a></li><li><a></a></li><li><a></a></li><li><a></a></li>
                 <li><a></a></li><li><a></a></li><li><a></a></li><li><a></a></li><li><a></a></li>
