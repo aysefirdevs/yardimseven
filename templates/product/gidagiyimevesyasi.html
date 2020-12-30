@@ -5,7 +5,13 @@
     <link rel="stylesheet" href="{% static 'css/kart.css' %}">
 
     <div class="container">
-    <h1>{{ categorydata.title }}Ürünler</h1>
+    <ul class="breadcrumb">
+      <li><a>Yardım</a></li>
+      <li><a href="{% url 'gida' %}">Gıda</a></li>
+      <li><a href="{% url 'giyim' %}">Giyim</a></li>
+      <li><a href="{% url 'esya' %}">Ev Eşyası</a></li>
+    </ul>
+    <h1>Ürünler</h1>
          <hr>
         <div class="row">
 
@@ -15,8 +21,16 @@
                         <img class="displayed" src="{{ item.image.url }}" alt="Laptop" style="width:200px; height: 200px;">
                         <h3>{{item.title }}</h3>
                         <p class="price">{{ item.price }} TL</p>
-                        <p>{{ item.desription}}</p>
-                        <p><button>Add to Cart</button></p>
+                        <p>{{ item.detail}}</p>
+                        <div class="container">
+                                <div class="row">
+                                  <div class="qty-input">
+                                      <span>Adet:</span>
+                                      <label><input class="input" type="number" min="0" max="{{ item.amount }}" value="1"></label>
+                                  </div>
+                                </div>
+                        </div>
+                                <p><button>Sepete Ekle</button></p>
                     </div>
                 </div>
             {% endfor %}

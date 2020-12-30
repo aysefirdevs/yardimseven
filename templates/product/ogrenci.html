@@ -3,20 +3,35 @@
 
 {% block body %}
     <link rel="stylesheet" href="{% static 'css/kart.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <div class="container">
-    <h1>{{ categorydata.title }}Ürünler</h1>
+    <ul class="breadcrumb">
+      <li><a>Öğrenci</a></li>
+      <li><a href="{% url 'kirtasiye' %}">Kırtasiye</a></li>
+      <li><a href="{% url 'elektronik' %}">Elektronik</a></li>
+      <li><a href="{% url 'cgiyim' %}">Çocuk Giyim</a></li>
+    </ul>
+    <h2>Ürünler</h2>
          <hr>
         <div class="row">
-
             {% for item in products %}
                 <div class="col-sm-4">
                     <div class="card">
                         <img class="displayed" src="{{ item.image.url }}" alt="Laptop" style="width:200px; height: 200px;">
                         <h3>{{item.title }}</h3>
                         <p class="price">{{ item.price }} TL</p>
-                        <p>{{ item.desription}}</p>
-                        <p><button>Add to Cart</button></p>
+                        <p>{{ item.detail}}</p>
+                        <div class="container">
+                                <div class="row">
+                                  <div class="qty-input">
+                                      <span>Adet:</span>
+                                      <label><input class="input" type="number" min="0" max="{{ item.amount }}" value="1"></label>
+                                  </div>
+                                </div>
+                        </div>
+                                <p><button>Sepete Ekle</button></p>
+
                     </div>
                 </div>
             {% endfor %}
