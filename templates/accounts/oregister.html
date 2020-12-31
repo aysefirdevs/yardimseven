@@ -2,6 +2,14 @@
 {% load crispy_forms_filters %}
 {% load static %}
 {% block body %}
+
+    <link rel="stylesheet" href="{% static 'css/kart.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="container">
+    <ul class="breadcrumb">
+      <li><a href="{% url 'bagisci_signup' %}">Bağışçı Kayıt</a></li>
+      <li><a>Öğretmen Kayıt</a></li>
+    </ul>
     {% load crispy_forms_tags %}
     <div class="container-fluid">
           <div class="row">
@@ -21,5 +29,5 @@
           </div>
     </div>
 
-
+</div>
 {% endblock %}

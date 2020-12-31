@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 from .views import RegisterView,Login,ORegisterView,OLogin
 
+
+
 urlpatterns = [
     path('login/',Login,name='login'),
     path('logout/',views.logoutUser,name="logout"),

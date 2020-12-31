@@ -18,13 +18,16 @@ from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
 
-
+from orders import views as orderviews
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('yardim.urls')),
     path('accounts/',include('accounts.urls')),
-    path('product/',include('products.urls')),
+    path('products/',include('products.urls')),
+    path('orders/',include('orders.urls')),
+
+    path('shopcart/', orderviews.shopcart, name='shopcart'),
 
 ] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

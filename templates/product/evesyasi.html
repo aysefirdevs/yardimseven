@@ -24,13 +24,17 @@
                         <p>{{ item.detail}}</p>
                         <div class="container">
                                 <div class="row">
-                                  <div class="qty-input">
-                                      <span>Adet:</span>
-                                      <label><input class="input" type="number" min="0" max="{{ item.amount }}" value="1"></label>
-                                  </div>
+                                    <form action="/orders/addtocart/{{ item.id }}" method="post">
+                                        {% csrf_token %}
+                                        {{ form.as_p }}
+                                              <div class="qty-input">
+                                                  <span>Adet:</span>
+                                                  <label><input class="input" name="quantity" type="number" min="0" max="{{ item.amount }}" value="1"></label>
+                                              </div>
+                                        <p><button type="submit">Sepete Ekle</button></p>
+                                    </form>
                                 </div>
                         </div>
-                                <p><button>Sepete Ekle</button></p>
                     </div>
                 </div>
             {% endfor %}

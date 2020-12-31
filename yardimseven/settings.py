@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'yardim',
     'accounts',
+    'products',
+    'orders.apps.OrdersConfig',
     'crispy_forms',
     'django_cleanup.apps.CleanupConfig',
-    'products',
     'mptt',
+
 ]
 
 MIDDLEWARE = [

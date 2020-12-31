@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block body %}
 {% load crispy_forms_tags %}
-
+    <link rel="stylesheet" href="{% static 'css/kart.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="container">
+<ul class="breadcrumb">
+      <li><a>Bağışçı Giriş</a></li>
+      <li><a href="{% url 'ologin' %}">Öğretmen Giriş</a></li>
+    </ul>
         {% load crispy_forms_tags %}
          <div class="container-fluid">
           <div class="row">
