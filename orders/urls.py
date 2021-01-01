@@ -1,0 +1,11 @@
+from django.urls import path
+from . import views
+
+#from .views import category
+
+urlpatterns = [
+
+    path('addtocart/<int:id>',views.addtocart,name='addtocart'),
+    path('deletefromcart/<int:id>',views.deletefromcart,name='deletefromcart')
+
+]
