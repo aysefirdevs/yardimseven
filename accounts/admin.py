@@ -6,3 +6,4 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ('username','email','is_bagisci','is_ogretmen','telefon','kimlik')
 
 admin.site.register(User,UserAdmin)
+

@@ -59,9 +59,9 @@
     </li>
       <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-decoration: none">Bağış Yap</a>
                 <ul class="dropdown-menu animated" >
-                    <li><a href="#" style="text-decoration: none">Afetzedeler</a></li>
-                    <li><a href="#" style="text-decoration: none">İhtiyaç Sahipleri</a></li>
-                    <li><a href="#" style="text-decoration: none">Sokak Hayvanları</a></li>
+                    <li><a href="/payment/{{ 1 }}" style="text-decoration: none">Afetzedeler</a></li>
+                    <li><a href="/payment/{{ 2 }}" style="text-decoration: none">İhtiyaç Sahipleri</a></li>
+                    <li><a href="/payment/{{ 3 }}" style="text-decoration: none">Sokak Hayvanları</a></li>
                 </ul>
       </li>
       <li><a href="{% url 'bizeulasin' %}" style="text-decoration: none">Bize Ulaşın</a></li>
@@ -81,7 +81,8 @@
 
           <ul class="dropdown-menu animated">
               <li><a href="{% url 'ihtiyaclarim' %}" style="text-decoration: none">İhtiyaçlarım</a></li>
-
+              <li><a href="{%  url 'koybagislarim' %}" style="text-decoration: none">Bağışlarım</a></li>
+               <li><a href="{% url 'order' %}" style="text-decoration: none">Siparişlerim</a></li>
                <li><a href="accounts/logout" style="text-decoration: none">Çıkış Yap</a></li>
           </ul></li>
 
@@ -93,7 +94,11 @@
                                 <i class="fa fa-shopping-cart"></i>
                                 <span class="qty">Sepet</span>
                             </div></a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-decoration: none" > <i class="fa fa-user"></i> HESABIM</a>
 
+          <ul class="dropdown-menu animated">
+              <li><a href="{%  url 'koybagislarim' %}" style="text-decoration: none">Bağışlarım</a></li>
+              <li><a href="{% url 'order' %}" style="text-decoration: none">Siparişlerim</a></li>
                <li><a href="accounts/logout" style="text-decoration: none">Çıkış Yap</a></li>
           </ul></li>
 

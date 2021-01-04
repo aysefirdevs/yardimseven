@@ -40,37 +40,29 @@
                                   </div>
                                 </div>
                               </th>
-                              <td class="border-0 align-middle"><strong>{{item.amount}} TL</strong></td>
+                              <td class="border-0 align-middle"><strong>{{item.price}} TL</strong></td>
                               <td class="border-0 align-middle"><strong>{{ item.quantity }}</strong></td>
                               <td class="border-0 align-middle"><a href="/orders/deletefromcart/{{ item.id }}" onclick="return confirm('Silmek istediğine emin misin?')" class="text-dark"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
                             </tr>
                     {% endfor %}
               </tbody>
             </table>
-          </div>
+           <div class="col-md-4 ml-auto">
+              <div class="p-4">
+                <ul class="list-unstyled mb-4">
+                  <li class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold"><strong class="text-muted">Total</strong>
+                    <h5 class="font-weight-bold" class="total" > {{total}} TL</h5>
+                  </li>
+                </ul>
+                  <a href="{% url 'orderproduct' %}" class="btn btn-dark rounded-pill py-2 btn-block">Onayla</a>
+              </div>
+            </div>
+              </div>
           <!-- End -->
         </div>
       </div>
 
-      <div class="row py-5 p-4 bg-white rounded shadow-sm">
 
-        <div class="col-lg-6">
-          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
-          <div class="p-4">
-            <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
-            <ul class="list-unstyled mb-4">
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$390.00</strong></li>
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                <h5 class="font-weight-bold">$400.00</h5>
-              </li>
-            </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
-          </div>
-        </div>
-      </div>
 
-    </div>
-  </div>
-</div>
+
 {% endblock %}

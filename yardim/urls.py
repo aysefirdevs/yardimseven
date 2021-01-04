@@ -19,6 +19,9 @@ urlpatterns = [
     path('ihtiyaclarim/delete/<int:id>',views.deleteIhtiyac,name='delete'),
     path('detay/<int:pk>',detay.as_view(), name='detay'),
     path('koyokullari/',views.koyokullari,name='koyokullari'),
+    path('odemebagis/<int:id>',views.odemebagis,name='odemebagis'),
+    path('payment/<int:id>',views.payment, name='payment'),
+
 
 
 
