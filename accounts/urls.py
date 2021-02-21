@@ -15,5 +15,4 @@ urlpatterns = [
     path('bagislarim/',views.koybagislarim, name='koybagislarim'),
 
 
-
 ]

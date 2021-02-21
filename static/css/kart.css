@@ -6,6 +6,12 @@
   font-family: arial;
 }
 
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
 .price {
   color: grey;
   font-size: 22px;

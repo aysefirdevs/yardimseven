@@ -23,6 +23,14 @@ class Ihtiyac(models.Model):
     def __str__(self):
         return self.title
 
+class Arsiv(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    isim = models.CharField(max_length=100)
+    sehir = models.CharField(max_length=50)
+    content = models.TextField()
+    username = models.CharField(max_length=15)
+    tutar = models.FloatField()
+    create_at = models.DateTimeField(auto_now_add=True)
 
 class Carousel(models.Model):
     title=models.CharField(max_length=200, blank=True, null=True)
@@ -77,5 +85,16 @@ class  BagisPaymentForm(ModelForm):
     class Meta:
         model=BagisPayment
         fields=['tutar','first_name','last_name','phone']
+
+
+class Contact(models.Model):
+    name=models.CharField(max_length=50)
+    email=models.EmailField()
+    konu=models.CharField(max_length=50)
+    mesaj=models.TextField()
+
+    def __str__(self):
+        return self.name
+
 
 

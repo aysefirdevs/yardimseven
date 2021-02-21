@@ -47,7 +47,7 @@
             </li-->
             <li><a href="{% url 'ogrenci' %}" style="text-decoration: none">Öğrenci</a></li>
             <li><a href="{% url 'yardim' %}" style="text-decoration: none">Gıda/Giyim/Ev Eşyası</a></li>
-            <li><a href="{% url 'koyokullari' %}" style="text-decoration: none">Köy Okulları</a></li>
+            <li><a href="{% url 'index' %}" style="text-decoration: none">Köy Okulları</a></li>
             <!--li class="dropdown-submenu"><a href="{% url 'yardim' %}" style="text-decoration: none">Gıda/Giyim/Ev Eşyası</a>
                 <ul class="dropdown-menu">
                 <li><a href="{% url 'gida' %}">Gıda</a></li>
@@ -66,8 +66,12 @@
       </li>
       <li><a href="{% url 'bizeulasin' %}" style="text-decoration: none">Bize Ulaşın</a></li>
 
-                     <li><a></a></li><li><a></a></li><li><a></a></li><li><a></a></li><li><a></a></li><li><a></a></li>
-                <li><a></a></li><li><a></a></li><li>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
       {% if request.user.is_authenticated and user.is_ogretmen %}
           <li class="buton"><a href="{% url 'ihtiyacekle' %}" class="btn btn-1">İhtiyaç Ekle</a></li>

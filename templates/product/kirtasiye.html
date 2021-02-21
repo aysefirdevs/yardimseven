@@ -28,15 +28,18 @@
                                     <form action="/orders/addtocart/{{ item.id }}" method="post">
                                         {% csrf_token %}
                                         {{ form.as_p }}
-                                              <div class="qty-input">
+                                               <div class="qty-input">
+                                                  &nbsp;
                                                   <span>Adet:</span>
                                                   <label><input class="input" name="quantity" type="number" min="0" max="{{ item.amount }}" value="1"></label>
+                                               &nbsp; &nbsp; &nbsp;
+                                                 <label><button type="submit" class="btn btn-dark py-1">Sepete Ekle</button></label>
                                               </div>
-                                        <p><button type="submit">Sepete Ekle</button></p>
                                     </form>
                                 </div>
                         </div>
                     </div>
+                <br>
                 </div>
             {% endfor %}
         </div>

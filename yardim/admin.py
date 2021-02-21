@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Ihtiyac,Carousel
+from .models import Ihtiyac,Carousel,BagisPayment,Contact
 # Register your models here.
 
 @admin.register(Ihtiyac)
@@ -26,3 +26,21 @@ class CarouselAdmin(admin.ModelAdmin):
     list_editable = list_filter
 
 admin.site.register(Carousel, CarouselAdmin)
+
+class BagisPaymentAdmin(admin.ModelAdmin):
+    list_display = [
+        'user',
+        "first_name",
+        "last_name",
+        'phone',
+        'tutar',
+        'tip',
+    ]
+    list_filter = ['tip', ]
+
+admin.site.register(BagisPayment,BagisPaymentAdmin)
+
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ['name','email','konu','mesaj']
+
+admin.site.register(Contact,ContactAdmin)

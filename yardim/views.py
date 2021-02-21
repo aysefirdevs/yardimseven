@@ -1,15 +1,16 @@
 from msilib.schema import ListView
 
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.urls import reverse
-from .forms import IhtiyacForm
+from .forms import IhtiyacForm,ContactForm
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 
 # Create your views here.
 from django.views.generic import TemplateView, ListView, DetailView
 
-from .models import Ihtiyac, Carousel,Bagis,BagisForm,BagisPayment,BagisPaymentForm
+from .models import Ihtiyac, Carousel,Bagis,BagisForm,BagisPayment,BagisPaymentForm,Arsiv
 
 STATUS = "published"
 
@@ -18,7 +19,7 @@ class IndexView(ListView):
     template_name= 'yardim/index.html'
     model=Ihtiyac
     context_object_name = 'ihtiyaclar'
-    paginate_by = 2
+    paginate_by = 3
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context=super(IndexView, self).get_context_data(**kwargs)
@@ -55,8 +56,25 @@ def hakkimizda(request):
 
 def bizeulasin(request):
     mapbox_access_token = 'pk.my_mapbox_access_token'
+    if request.method=='POST':
+        form=ContactForm(request.POST)
+        if form.is_valid():
+            name=form.cleaned_data['name']
+            email=form.cleaned_data['email']
+            konu=form.cleaned_data['konu']
+            mesaj=form.cleaned_data['mesaj']
+            form.save()
+            messages.success(request,"Mesajınız alındı! Teşekkürler.")
+            return redirect('bizeulasin')
+    else:
+        form=ContactForm()
+
+    context= {
+        'mapbox_access_token': mapbox_access_token,
+        'form': form
+    }
     return render(request,'yardim/bizeulasin.html',
-                  { 'mapbox_access_token': mapbox_access_token })
+                  context)
 
 
 def ihtiyacekle(request):
@@ -111,7 +129,10 @@ def deleteIhtiyac(request,id):
 
 def koyokullari(request):
     ihtiyaclar = Ihtiyac.objects.all()
-    return render(request, 'yardim/koyokullari.html', {'ihtiyaclar': ihtiyaclar})
+    paginator = Paginator(ihtiyaclar, 2)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'yardim/koyokullari.html', {'ihtiyaclar': ihtiyaclar,'page_obj': page_obj })
 
 
 @login_required(login_url='/accounts/login/')
@@ -130,6 +151,14 @@ def odemebagis(request,id):
             data.tutar=iht.sum
             data.save()
 
+            veri=Arsiv()
+            veri.username=current_user.username
+            veri.isim=iht.title
+            veri.sehir=iht.city
+            veri.content=iht.content
+            veri.tutar = iht.sum
+            veri.user_id=current_user.id
+            veri.save()
             Ihtiyac.objects.filter(id=id).delete()
             messages.success(request, 'bağışınız alındı. Teşekkürler')
             return render(request, 'yardim/bagiscompleted.html', {'iht': iht})
@@ -145,7 +174,7 @@ def odemebagis(request,id):
     }
     return render(request,'yardim/odeme.html',context)
 
-
+@login_required(login_url='/accounts/login/')
 def payment(request,id):
     current_user = request.user
     tip = id

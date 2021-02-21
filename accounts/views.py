@@ -6,7 +6,7 @@ from django.template.context_processors import request
 from django.views.generic import CreateView
 from .forms import RegisterForm,ORegisterForm,LoginForm,OLoginForm
 from .models import User
-from django.contrib import messages
+from django.contrib import messages, auth
 
 # Create your views here.
 from products.models import Category,Product
