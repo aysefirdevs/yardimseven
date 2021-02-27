@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+      <link rel="icon" href="{% static 'img/icon.png' %}" type="image/png">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="px-4 px-lg-0">
+  <div class="pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+          <!-- Shopping cart table -->
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">First Name</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Last Name</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Total</div>
+                  </th>
+                    <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Date</div>
+                  </th>
+                     <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Bağış Tipi</div>
+                  </th>
+
+                </tr>
+              </thead>
+              <tbody>
+              {% for item in bagis %}
+                        <tr>
+                        <td class="border-0 align-middle"><strong>{{ item.first_name }}</strong></td>
+                        <td class="border-0 align-middle"><strong>{{item.last_name}}</strong></td>
+                        <td class="border-0 align-middle"><strong>{{item.tutar}} TL</strong></td>
+                        <td class="border-0 align-middle"><strong>{{item.create_at}}</strong></td>
+                        <td class="border-0 align-middle"><strong>Köy Okulu</strong></td>
+                        </tr>
+              {% endfor %}
+
+
+              {% for item in Pbagis %}
+                        <tr>
+                        <td class="border-0 align-middle"><strong>{{ item.first_name }}</strong></td>
+                        <td class="border-0 align-middle"><strong>{{item.last_name}}</strong></td>
+                        <td class="border-0 align-middle"><strong>{{item.tutar}} TL</strong></td>
+                        <td class="border-0 align-middle"><strong>{{item.create_at}}</strong></td>
+                        {% if item.tip == 1 %}
+                            <td class="border-0 align-middle"><strong>Afetzedeler</strong></td>
+                        {% endif %}
+                        {% if item.tip == 2 %}
+                             <td class="border-0 align-middle"><strong>İhtiyaç Sahipleri</strong></td>
+                        {% endif %}
+                        {% if item.tip == 3 %}
+                            <td class="border-0 align-middle"><strong>Sokak Hayvanları</strong></td>
+                        {% endif %}
+                        </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          <!-- End -->
+        </div>
+      </div>
+
+{% endblock %}

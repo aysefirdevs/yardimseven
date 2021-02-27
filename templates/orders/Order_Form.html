@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{%  load static %}
+{% block body %}
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+           <div class="row">
+                    <div class="col-sm-6">
+                        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Shipping Details</div>
+                        <div class="p-4">
+                          <form action="{% url 'orderproduct' %}" method="post">
+                            {% csrf_token %}
+                              {{ form|crispy }}
+                            <div class="pull-right">
+                                <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block">Siparişi Tamamla</button>
+                            </div>
+                        </form>
+                    </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Payment Information</div>
+                         <div class="p-4">
+                             <ul class="list-unstyled mb-4">
+                            <p><label for="id_first_name" class="total" >Total:</label>
+                                <input type="text" name="total" class="form-control form-rounded" readonly value="{{ total }}"></p>
+                            <p><label for="id_first_name">Credit Card Holder</label>
+                                <input type="text" name="holder" class="form-control form-rounded"  value=""></p>
+                            <p><label for="id_first_name">Credit Card Number</label>
+                                <input type="text" name="number" class="form-control form-rounded"  value=""></p>
+                            <p><label for="id_first_name">Credit Exp Date/Year</label>
+                                <input type="text" name="ecpdate" class="form-control form-rounded"  placeholder="mm/yy"></p>
+                            <p><label for="id_first_name">Security Number</label>
+                                <input type="text" name="secnumber" class="form-control form-rounded"  value=""></p>
+                             </ul>
+                         </div>
+                        </div>
+                    </div>
+
+             <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+          <!-- Shopping cart table -->
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="p-2 px-3 text-uppercase">Product</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Price</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Quantity</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    {% for item in schopcart %}
+                              <th scope="row" class="border-0">
+                                <div class="p-2">
+                                  <img src="{{ item.product.image.url }}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                  <div class="ml-3 d-inline-block align-middle">
+                                    <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{{ item.product.title }}</a></h5><span class="text-muted font-weight-normal font-italic d-block">{{ item.product.category}}</span>
+                                  </div>
+                                </div>
+                              </th>
+                              <td class="border-0 align-middle"><strong>{{item.price}} TL</strong></td>
+                              <td class="border-0 align-middle"><strong>{{ item.quantity }}</strong></td>
+                            </tr>
+                    {% endfor %}
+              </tbody>
+            </table>
+           <div class="col-md-4 ml-auto">
+              <div class="p-4">
+                <ul class="list-unstyled mb-4">
+                  <li class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold"><strong class="text-muted">Total</strong>
+                    <h5 class="font-weight-bold" class="total"> {{total}} TL</h5>
+                  </li>
+                </ul>
+              </div>
+            </div>
+              </div>
+          <!-- End -->
+        </div>
+
+
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+
+    <!-- /section -->
+{% endblock %}

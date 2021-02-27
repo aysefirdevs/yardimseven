@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Shipping Details</div>
+                <div class="p-4">
+                <form action="/odemebagis/{{ iht.id }}" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block">Siparişi Tamamla</button>
+                    </div>
+                </form>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Payment Information</div>
+                         <div class="p-4">
+                             <ul class="list-unstyled mb-4">
+                            <p><label for="id_first_name" class="tutar" >Total:</label>
+                                <input type="text" name="tutar" class="form-control form-rounded" readonly value="{{ tutar }} ₺"></p>
+                            <p><label for="id_first_name">Credit Card Holder</label>
+                                <input type="text" name="holder" class="form-control form-rounded"  value=""></p>
+                            <p><label for="id_first_name">Credit Card Number</label>
+                                <input type="text" name="number" class="form-control form-rounded"  value=""></p>
+                            <p><label for="id_first_name">Credit Exp Date/Year</label>
+                                <input type="text" name="ecpdate" class="form-control form-rounded"  placeholder="mm/yy"></p>
+                            <p><label for="id_first_name">Security Number</label>
+                                <input type="text" name="secnumber" class="form-control form-rounded"  value=""></p>
+                             </ul>
+                         </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
