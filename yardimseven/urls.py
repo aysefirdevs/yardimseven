@@ -27,6 +27,7 @@ urlpatterns = [
     path('accounts/',include('accounts.urls')),
     path('products/',include('products.urls')),
     path('orders/',include('orders.urls')),
+    path('oneri/',include('oneri.urls')),
 
     path('shopcart/', orderviews.shopcart, name='shopcart'),
 

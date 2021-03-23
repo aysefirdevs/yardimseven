@@ -19,7 +19,7 @@ class IndexView(ListView):
     template_name= 'yardim/index.html'
     model=Ihtiyac
     context_object_name = 'ihtiyaclar'
-    paginate_by = 3
+    paginate_by = 10
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context=super(IndexView, self).get_context_data(**kwargs)
