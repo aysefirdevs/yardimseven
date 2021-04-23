@@ -29,6 +29,7 @@ class IndexView(ListView):
         return context
 
 
+
 #def carousel(request):
  #   context = dict()
  #   context['images'] = Carousel.objects.filter(

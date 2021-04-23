@@ -15,33 +15,28 @@
               <thead>
                 <tr>
                   <th scope="col" class="border-0 bg-light">
-                    <div class="p-2 px-3 text-uppercase">Id</div>
+                    <div class="py-2 text-uppercase">ADI</div>
                   </th>
                   <th scope="col" class="border-0 bg-light">
-                    <div class="py-2 text-uppercase">First Name</div>
+                    <div class="py-2 text-uppercase">SOYADI</div>
                   </th>
                   <th scope="col" class="border-0 bg-light">
-                    <div class="py-2 text-uppercase">Last Name</div>
-                  </th>
-                  <th scope="col" class="border-0 bg-light">
-                    <div class="py-2 text-uppercase">Total</div>
+                    <div class="py-2 text-uppercase">TUTAR</div>
                   </th>
                     <th scope="col" class="border-0 bg-light">
-                    <div class="py-2 text-uppercase">Status</div>
+                    <div class="py-2 text-uppercase">DURUM</div>
                   </th>
                     <th scope="col" class="border-0 bg-light">
-                    <div class="py-2 text-uppercase">Date</div>
+                    <div class="py-2 text-uppercase">TARİH</div>
                   </th>
                     <th scope="col" class="border-0 bg-light">
-                    <div class="py-2 text-uppercase">Detail</div>
+                    <div class="py-2 text-uppercase">DETAY</div>
                   </th>
-
                 </tr>
               </thead>
               <tbody>
               {% for item in orders %}
                         <tr>
-                        <td class="border-0 align-middle"><strong>{{item.id}}</strong></td>
                         <td class="border-0 align-middle"><strong>{{ item.first_name }}</strong></td>
                         <td class="border-0 align-middle"><strong>{{item.last_name}}</strong></td>
                         <td class="border-0 align-middle"><strong>{{item.total}} TL</strong></td>

@@ -9,7 +9,7 @@
             <!-- row -->
            <div class="row">
                     <div class="col-sm-6">
-                        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Shipping Details</div>
+                        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">ALIŞVERİŞ DETAYLARI</div>
                         <div class="p-4">
                           <form action="{% url 'orderproduct' %}" method="post">
                             {% csrf_token %}
@@ -22,18 +22,18 @@
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Payment Information</div>
+                        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">ÖDEME BİLGİLERİ</div>
                          <div class="p-4">
                              <ul class="list-unstyled mb-4">
-                            <p><label for="id_first_name" class="total" >Total:</label>
+                            <p><label for="id_first_name" class="total" >Toplam:</label>
                                 <input type="text" name="total" class="form-control form-rounded" readonly value="{{ total }}"></p>
-                            <p><label for="id_first_name">Credit Card Holder</label>
+                            <p><label for="id_first_name">Kredi Kart Sahibi</label>
                                 <input type="text" name="holder" class="form-control form-rounded"  value=""></p>
-                            <p><label for="id_first_name">Credit Card Number</label>
+                            <p><label for="id_first_name">Kredi Kart Numarası</label>
                                 <input type="text" name="number" class="form-control form-rounded"  value=""></p>
-                            <p><label for="id_first_name">Credit Exp Date/Year</label>
+                            <p><label for="id_first_name">Son Kullanım Tarihi</label>
                                 <input type="text" name="ecpdate" class="form-control form-rounded"  placeholder="mm/yy"></p>
-                            <p><label for="id_first_name">Security Number</label>
+                            <p><label for="id_first_name">Güvenlik Numarası</label>
                                 <input type="text" name="secnumber" class="form-control form-rounded"  value=""></p>
                              </ul>
                          </div>
@@ -48,13 +48,13 @@
               <thead>
                 <tr>
                   <th scope="col" class="border-0 bg-light">
-                    <div class="p-2 px-3 text-uppercase">Product</div>
+                    <div class="p-2 px-3 text-uppercase">Ürün</div>
                   </th>
                   <th scope="col" class="border-0 bg-light">
-                    <div class="py-2 text-uppercase">Price</div>
+                    <div class="py-2 text-uppercase">Fiyat</div>
                   </th>
                   <th scope="col" class="border-0 bg-light">
-                    <div class="py-2 text-uppercase">Quantity</div>
+                    <div class="py-2 text-uppercase">Miktar</div>
                   </th>
                 </tr>
               </thead>
@@ -78,7 +78,7 @@
            <div class="col-md-4 ml-auto">
               <div class="p-4">
                 <ul class="list-unstyled mb-4">
-                  <li class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold"><strong class="text-muted">Total</strong>
+                  <li class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold"><strong class="text-muted">Toplam</strong>
                     <h5 class="font-weight-bold" class="total"> {{total}} TL</h5>
                   </li>
                 </ul>
