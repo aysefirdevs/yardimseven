@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+    <div class="container">
+         {% for item in ihtiyaclistele %}
+              {% for nesne in gecici %}
+                  {% if nesne == item.id %}
+                            <article class="blog_style1">
+                            	<div class="blog_img">
+                            		<img class="img-fluid" src="{% static 'img/home/ogrenciler2.jpg' %}" alt="">
+                            	</div>
+                            	<div class="blog_text">
+									<div class="blog_text_inner">
+										<!-- class="cat" href="#">Gadgets</a-->
+										<a href="{% url 'detay' pk=item.id %}" style="text-decoration: none"><h4>{{ item.title}}</h4></a>
+										<p>{{ item.content | truncatechars:120 }}</p>
+										<div class="date">
+											<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>{{item.created_date}}</a>
+                                            <a href="#"><i class="fa fa-money" aria-hidden="true"></i>{{item.sum}} TL</a>
+                                            <a href="#"><i class="fa fa-location-arrow" aria-hidden="true"></i>{{ item.city }}</a>
+											<!--a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a-->
+										</div>
+									</div>
+                            	</div>
+                            </article>
+                  {% endif %}
+                  {% endfor %}
+         {% endfor %}
+    </div>
+{% endblock %}
