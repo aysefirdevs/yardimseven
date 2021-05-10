@@ -65,13 +65,12 @@
                 </ul>
       </li>
       <li><a href="{% url 'bizeulasin' %}" style="text-decoration: none">BİZE ULAŞIN</a></li>
-      <li><a href="{% url 'veriokuma' %}" style="text-decoration: none">ÖNERİLER</a></li>
+
 
                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
       {% if request.user.is_authenticated and user.is_ogretmen %}
@@ -93,6 +92,7 @@
 
 
       {% elif request.user.is_authenticated and user.is_bagisci %}
+            <li><a href="{% url 'veriokuma' %}" style="text-decoration: none">ÖNERİLER</a></li>
                 <li class="header-cart dropdown default-dropdown">
                         <a href="{% url 'shopcart'%}" >
                             <div class="header-btns-icon">
