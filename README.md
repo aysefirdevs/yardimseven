@@ -1,6 +1,5 @@
 # yardimseven
 
-
 ### Bu proje köy okulu öğrencilerinin ihtiyaçlarını, öğretmenleri aracılığı ile duyurup yardımsevenler tarafından bağış yapılması amacıyla django frameworkü kullanılarak yapılan bir web sitesidir.
 
 
